@@ -22,5 +22,90 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+/* Global utility classes */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent;
+  }
+  
+  .glass-effect {
+    @apply backdrop-blur-md bg-white/10 border border-white/20;
+  }
+  
+  .glass-effect-dark {
+    @apply backdrop-blur-md bg-black/10 border border-white/10;
+  }
+  
+  /* ODOO-specific utilities */
+  .odoo-button {
+    @apply bg-primary-500 hover:bg-primary-600 text-white font-medium py-2 px-4 rounded-md transition-colors duration-200 shadow-odoo;
+  }
+  
+  .odoo-button-secondary {
+    @apply bg-secondary-100 hover:bg-secondary-200 text-secondary-700 font-medium py-2 px-4 rounded-md transition-colors duration-200 border border-secondary-300;
+  }
+  
+  .odoo-card {
+    @apply bg-white rounded-lg shadow-odoo border border-secondary-200 p-6;
+  }
+  
+  .odoo-input {
+    @apply w-full px-3 py-2 border border-secondary-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200;
+  }
+  
+  .odoo-table {
+    @apply w-full border-collapse bg-white shadow-odoo rounded-lg overflow-hidden;
+  }
+  
+  .odoo-table th {
+    @apply bg-secondary-50 text-secondary-700 font-medium text-left px-4 py-3 border-b border-secondary-200;
+  }
+  
+  .odoo-table td {
+    @apply px-4 py-3 border-b border-secondary-100 text-secondary-900;
+  }
+  
+  .odoo-nav {
+    @apply bg-white shadow-odoo border-b border-secondary-200;
+  }
+  
+  .odoo-sidebar {
+    @apply bg-secondary-50 border-r border-secondary-200;
+  }
+  
+  .odoo-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  
+  .odoo-badge-success {
+    @apply bg-success-100 text-success-800;
+  }
+  
+  .odoo-badge-warning {
+    @apply bg-warning-100 text-warning-800;
+  }
+  
+  .odoo-badge-error {
+    @apply bg-error-100 text-error-800;
+  }
+  
+  .odoo-badge-info {
+    @apply bg-primary-100 text-primary-800;
+  }
 }
